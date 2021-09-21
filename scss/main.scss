@@ -15,6 +15,12 @@ body {
 
 .box {
   padding: 15vh calc(50vw - 600px);
+  @media screen and (max-width: 1300px) {
+    padding: 10vh 100px;
+  }
+  @media screen and (max-width: 990px) {
+    padding: 10vh 20px;
+  }
 }
 
 .header {
@@ -28,6 +34,10 @@ body {
     z-index: 1;
     width: 100%;
     padding: 5vh calc(50vw - 600px);
+    @media screen and (max-width: 992px) {
+      justify-content: space-around;
+    }
+
 
     &-logo {
       width: 250px;
@@ -36,11 +46,43 @@ body {
     }
   }
 
+  &__mini-menu {
+    display: none;
+    @media screen and (max-width: 992px) {
+      display: inline-block;
+      position: absolute;
+      top: 45vh;
+      right: 30px;
+      transform: rotate(180deg);
+      font-size: 30px;
+      &:after {
+        @include afterCircle();
+        right: -14px;
+      }
+
+      &:hover {
+        color: #2c4058;
+
+        &:after {
+          border-color: #2c4058;
+        }
+      }
+    }
+  }
+
   .nav-menu {
     @include flex-settings(row, space-between);
     flex-basis: 50%;
     text-transform: uppercase;
     list-style: circle;
+    @media screen and (max-width: 992px) {
+      display: block;
+      position: absolute;
+      right: 2000px;
+      top: 20vh;
+      height: 100%;
+    }
+
 
     ::marker {
       font-size: 25px;
@@ -62,7 +104,11 @@ body {
   .nav-social {
     @include flex-settings(row, space-around);
     flex-basis: 18%;
+    min-width: 200px;
     align-items: center;
+    @media screen and (max-width: 768px) {
+      min-width: 150px;
+    }
 
     &__link {
       position: relative;
@@ -70,14 +116,7 @@ body {
       fill: #fff;
 
       &:after {
-        display: block;
-        position: absolute;
-        right: -18px;
-        bottom: -10px;
-        width: 50px;
-        height: 50px;
-        border: 2px solid #fff;
-        border-radius: 50%;
+        @include afterCircle()
       }
     }
 
@@ -100,6 +139,12 @@ body {
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+
+    .slick-slide {
+      div {
+        height: 100%;
+      }
     }
 
     .slick-list {
@@ -139,17 +184,30 @@ body {
     width: 100%;
     padding: 0 calc(50vw - 600px);
 
+
     &-title {
       margin-bottom: 30px;
       @include font-settings("Gotham-Bold", 80px, #fff);
       text-transform: uppercase;
       letter-spacing: 5px;
+      @media screen and (max-width: 1200px) {
+        font-size: 50px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+      }
     }
 
     &-subtitle {
       text-transform: uppercase;
       letter-spacing: 5px;
-      line-height: 10px;
+      @media screen and (max-width: 1200px) {
+        font-size: 14px;
+      }
+      @media screen and (max-width: 768px) {
+        max-width: 300px;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -169,30 +227,41 @@ body {
     font-size: 30px;
     transform: rotate(90deg);
 
+    &:hover {
+      color: #0b224d;
+
+      &:after {
+        border-color: #0b224d;
+      }
+    }
+
     &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: -18px;
-      bottom: -10px;
-      width: 50px;
-      height: 50px;
-      border: 2px solid #fff;
-      border-radius: 50%;
+      @include afterCircle();
     }
   }
 }
 
 .projects {
   &__title {
-    @include h2Titles()
+    @include h2Titles();
+    @media screen and (max-width: 992px) {
+      margin-bottom: 140px;
+    }
   }
 
   .world {
     margin-bottom: 200px;
 
     &__picture {
-      @include img-position(7vw, #55b7ff)
+      @include img-position(7vw, #55b7ff);
+      @media screen and (max-width: 1400px) {
+        right: 2vw;
+        width: 100%;
+        min-width: 500px;
+      }
+      @media screen and (max-width: 576px) {
+        min-width: 150px;
+      }
     }
 
     &__article {
@@ -202,7 +271,16 @@ body {
 
   .international {
     &__picture {
-      @include img-position(-7vw, #7e5aff)
+      @include img-position(-7vw, #7e5aff);
+      @media screen and (max-width: 1400px) {
+        right: -2vw;
+        width: 100%;
+        min-width: 500px;
+        margin-top: 40px;
+      }
+      @media screen and (max-width: 576px) {
+        min-width: 150px;
+      }
     }
 
     &__article {
@@ -214,34 +292,66 @@ body {
   .international {
     @include flex-settings(row, space-between);
 
+    @media screen and (max-width: 1300px) {
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      margin: 0 auto;
+      @media screen and (max-width: 576px) {
+        width: 80%;
+      }
+
+      .international__article {
+        order: 2;
+      }
+    }
+
     &__article {
       position: relative;
       width: 50%;
       padding: 70px;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+        min-width: 500px;
+      }
+      @media screen and (max-width: 576px) {
+        min-width: 150px;
+        padding: 10px;
+      }
 
       &-subtitle {
         margin-bottom: 10px;
         text-transform: uppercase;
+        @media screen and (max-width: 1200px) {
+          font-size: 18px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 16px;
+        }
       }
 
       &-title {
         margin-bottom: 30px;
         @include font-settings("Gotham-Bold", 44px, #2c4058);
         text-transform: uppercase;
+        @media screen and (max-width: 1200px) {
+          font-size: 30px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 22px;
+        }
       }
 
       &-info {
         margin-bottom: 30px;
       }
 
+      &-hide {
+        display: none;
+      }
+
       &-button {
-        margin-bottom: 30px;
-        width: 200px;
-        height: 50px;
-        outline: none;
-        background-color: #fff;
-        font-size: 14px;
-        text-transform: uppercase;
+        @include button()
       }
 
       &-footer {
@@ -260,6 +370,7 @@ body {
 .news {
   background: url("/img/news_background.png") center no-repeat;
   background-size: cover;
+  opacity: 0;
 
   &__title {
     @include h2Titles();
@@ -271,6 +382,7 @@ body {
   }
 
   &__slider {
+
     .news-slide {
       @include flex-settings(column, space-between);
       background-color: #fff;
@@ -280,6 +392,9 @@ body {
       &__picture {
         width: 100%;
         height: 50%;
+        @media screen and (max-width: 1300px) {
+          height: 30%;
+        }
 
         img {
           width: 100%;
@@ -297,6 +412,7 @@ body {
           margin-bottom: 5px;
           @include font-settings("Gotham-Bold", 22px, #2c4058);
           text-transform: uppercase;
+
         }
 
         &-text {
@@ -335,6 +451,29 @@ body {
       }
     }
 
+    .slick-list {
+      margin: 0 auto;
+      @media screen and (max-width: 1400px) {
+        width: 800px;
+      }
+      @media screen and (max-width: 1300px) {
+        width: 700px;
+        height: 500px;
+      }
+      @media screen and (max-width: 768px) {
+        width: 450px;
+      }
+      @media screen and (max-width: 567px) {
+        width: 300px;
+      }
+    }
+
+    .slick-slide {
+      div {
+        margin-right: 60px;
+      }
+    }
+
     .slick-dots {
       @include flex-settings(row, center);
       width: 100%;
@@ -344,6 +483,13 @@ body {
       list-style-type: circle;
       font-size: 40px;
       color: #fff;
+      @media screen and (max-width: 1300px) {
+        flex-direction: column;
+        bottom: 120px;
+        right: 20px;
+        width: 10%;
+      }
+
 
       li {
         margin-right: 60px;
@@ -386,8 +532,12 @@ body {
         content: "\276E";
         left: -100px;
         top: 265px;
+        @media screen and (max-width: 1400px) {
+          left: 0;
+        }
       }
     }
+
     .slick-next {
 
       right: 40px;
@@ -399,7 +549,303 @@ body {
         content: "\276F";
         right: -100px;
         bottom: 265px;
+        @media screen and (max-width: 1400px) {
+          right: 0;
+        }
       }
     }
+  }
+}
+
+.gallery {
+  &__title {
+    @include h2Titles()
+  }
+
+  &__pictures {
+    @include flex-settings(row, space-between);
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 567px) {
+      height: 200px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-halfImg {
+      width: 49%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-left {
+      width: 49%;
+      position: relative;
+
+      &-360 {
+        position: absolute;
+        left: 45%;
+        bottom: 45%;
+        animation-name: circle;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+
+        @keyframes circle {
+          0% {
+            transform: rotate(0deg)
+          }
+          50% {
+            bottom: 60%
+          }
+          100% {
+            transform: rotate(360deg)
+          }
+        }
+        @media screen and (max-width: 567px) {
+          display: none;
+        }
+      }
+    }
+
+    .pict-right {
+      @include flex-settings(column, space-between);
+      width: 49%;
+
+      &__top {
+        @include flex-settings(row, space-between);
+        height: 49%;
+      }
+
+      &__bottom {
+        @include flex-settings(row, space-between);
+        height: 49%;
+      }
+    }
+  }
+
+  &__center {
+    @include flex-settings(row, center);
+    margin: 60px 0;
+
+    &-button {
+      @include button();
+      margin: 0 auto;
+    }
+  }
+
+  &__pictures2 {
+    display: none;
+
+    .gallery__pictures-left {
+      order: 2;
+    }
+  }
+}
+
+.map {
+  height: 70vh;
+}
+
+.footer {
+  padding: 25vh calc(50vw - 400px);
+  position: relative;
+  background: url("/img/footer_background.png") center no-repeat;
+  background-size: cover;
+  @media screen and (max-width: 992px) {
+    padding: 15vh calc(50vw - 400px);
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 calc(50vw - 400px) 10vh;
+  }
+
+  &__contact {
+    background: url("/img/form_beackground.png") #fff center no-repeat;
+    background-size: cover;
+    min-width: 780px;
+    position: absolute;
+    bottom: 450px;
+    padding: 50px;
+    @media screen and (max-width: 992px) {
+      min-width: 0;
+      bottom: 320px;
+    }
+    @media screen and (max-width: 768px) {
+      position: relative;
+      bottom: 0;
+      margin-bottom: 30px;
+    }
+    @media screen and (max-width: 567px) {
+      padding: 30px;
+    }
+
+    &-title {
+      @include h2Titles();
+      margin-bottom: 80px;
+    }
+
+    .contact-form {
+      @include flex-settings(row, space-between);
+      height: 200px;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        height: 350px;
+      }
+
+      .form-info {
+        @include flex-settings(column, space-between);
+        width: 48%;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          height: 48%;
+          order: 2;
+        }
+
+        &__block {
+          @include flex-settings(row, flex-start);
+
+          &-svg {
+            width: 25px;
+            height: 25px;
+            fill: #7e5aff;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      &__submit {
+        @include flex-settings(column, space-between);
+        width: 48%;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          height: 48%;
+        }
+
+        &-input {
+          border: none;
+          border-bottom: 3px solid rgba(44, 64, 88, 0.33);
+          outline: none;
+          padding-bottom: 15px;
+          margin-bottom: 10px;
+
+          &::placeholder {
+            color: rgba(44, 64, 88, 0.33);
+          }
+
+          &:focus {
+            border-color: #2c4058;
+
+            &::placeholder {
+              color: #2c4058;
+            }
+          }
+        }
+
+        &-button {
+          @include button();
+          width: 150px;
+          margin: 10px;
+        }
+
+        .right-button {
+          @include flex-settings(row, flex-end);
+        }
+      }
+    }
+  }
+
+  &-header {
+    @include flex-settings(row, space-between);
+    width: 100%;
+    padding: 20px;
+    @media screen and (max-width: 992px) {
+      justify-content: space-around;
+    }
+
+    &__nav {
+      @include flex-settings(row, space-between);
+      align-items: center;
+      width: 100%;
+      padding: 5vh calc(50vw - 600px);
+
+      &-logo {
+        width: 250px;
+        height: 50px;
+        fill: #fff;
+      }
+    }
+
+    .nav-social {
+      @include flex-settings(row, space-around);
+      flex-basis: 30%;
+      align-items: center;
+
+      &__link {
+        position: relative;
+        width: 22px;
+        fill: #fff;
+
+        &:after {
+          @include afterCircle()
+        }
+      }
+
+      &__svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  &__text {
+    @include flex-settings(row, space-around);
+    margin-top: 50px;
+    padding: 20px;
+    color: #fff;
+
+    &-left {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: -70px;
+        width: 2px;
+        height: 30px;
+        background-color: #fff;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.nav-social {
+  @media screen and (max-width: 768px) {
+    min-width: 150px;
+    .nav-social__svg {
+      width: 15px;
+      height: 15px;
+    }
+    .nav-social__link:after {
+      right: -3px;
+      bottom: -6px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.nav-social__link:hover {
+  fill: #0b224d;
+
+  &:after {
+    border-color: #0b224d;
   }
 }

@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="We make the world's beautiful every day">
     <meta name="keywords" content="Monticello">
@@ -41,17 +40,17 @@
             </li>
         </ul>
         <div class="header__nav-social nav-social">
-            <a href="" class="nav-social__link">
+            <a href="https://uk-ua.facebook.com/" target="_blank" class="nav-social__link">
                 <svg class="nav-social__svg">
                     <use xlink:href="./img/sprite.svg#facebook"></use>
                 </svg>
             </a>
-            <a href="" class="nav-social__link">
+            <a href="https://twitter.com/?lang=uk" target="_blank" class="nav-social__link">
                 <svg class="nav-social__svg">
                     <use xlink:href="./img/sprite.svg#twitter"></use>
                 </svg>
             </a>
-            <a href="" class="nav-social__link">
+            <a href="https://www.instagram.com/" target="_blank" class="nav-social__link">
                 <svg class="nav-social__svg">
                     <use xlink:href="./img/sprite.svg#instagram "></use>
                 </svg>
@@ -83,8 +82,12 @@
             We make the world's beautiful every day
         </h3>
     </div>
+    <div class="header__mini-menu mini-menu">
+        <p class="mini-menu__icon">&#9776;</p>
+    </div>
+    div.header__mini-nav
     <div class="header__down-scroll scroll">
-        <p class="scroll__icon">&#10095</p>
+        <p class="scroll__icon">&#10095;</p>
     </div>
 </header>
 <section class="projects">
@@ -104,7 +107,13 @@
                     Trade center
                 </h2>
                 <p class="world__article-info">
-                    Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.
+                    Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth
+                    is, our thoughts are very powerful.
+                </p>
+                <p class="world__article-info world__article-hide">
+                    Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth
+                    is, our thoughts are very powerful.Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth
+                    is, our thoughts are very powerful.
                 </p>
                 <button class="world__article-button">
                     More details
@@ -126,7 +135,13 @@
                     Commerce Centre
                 </h2>
                 <p class="international__article-info">
-                    Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.
+                    Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and
+                    how a digital advertising network may help.
+                </p>
+                <p class="international__article-info international__article-hide">
+                    Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth
+                    is, our thoughts are very powerful.Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth
+                    is, our thoughts are very powerful.
                 </p>
                 <button class="international__article-button">
                     More details
@@ -307,14 +322,132 @@
                     </footer>
                 </article>
             </div>
-
         </div>
     </div>
 </section>
+<section class="gallery">
+    <div class="box">
+        <h2 class="gallery__title">
+            Gallery
+        </h2>
+        <div class="gallery__pictures">
+            <div class="gallery__pictures-left">
+                <img src="./img/gallery_1.png" alt="Gallery" class="gallery__pictures-img">
+                <img src="./img/360.png" alt="Gallery" class="gallery__pictures-left-360">
+            </div>
+            <div class="gallery_pictures-right pict-right">
+                <div class="pict-right__top">
+                    <img src="./img/gallery_2.png" alt="Gallery" class="gallery__pictures-halfImg">
+                    <img src="./img/gallery_3.png" alt="Gallery" class="gallery__pictures-halfImg">
+                </div>
+                <div class="pict-right__bottom">
+                    <img src="./img/gallery_4.png" alt="Gallery" class="gallery__pictures-halfImg">
+                    <img src="./img/gallery_5.png" alt="Gallery" class="gallery__pictures-halfImg">
+                </div>
+            </div>
+        </div>
+        <div class="gallery__center">
+            <button class="gallery__center-button">
+                See More
+            </button>
+        </div>
+        <div class="gallery__pictures gallery__pictures2">
+            <div class="gallery__pictures-left">
+                <img src="./img/gallery_1.png" alt="Gallery" class="gallery__pictures-img">
+                <img src="./img/360.png" alt="Gallery" class="gallery__pictures-left-360">
+            </div>
+            <div class="gallery_pictures-right pict-right">
+                <div class="pict-right__top">
+                    <img src="./img/gallery_2.png" alt="Gallery" class="gallery__pictures-halfImg">
+                    <img src="./img/gallery_3.png" alt="Gallery" class="gallery__pictures-halfImg">
+                </div>
+                <div class="pict-right__bottom">
+                    <img src="./img/gallery_4.png" alt="Gallery" class="gallery__pictures-halfImg">
+                    <img src="./img/gallery_5.png" alt="Gallery" class="gallery__pictures-halfImg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="map" id="map">
+</div>
+<footer class="footer">
+    <div class="footer__contact">
+        <h2 class="footer__contact-title">
+            Get in touch
+        </h2>
+        <form method="get" class="footer__contact-form contact-form">
+            <div class="contact-form__info form-info">
+                <div class="form-info__block">
+                    <svg class="form-info__block-svg">
+                        <use xlink:href="./img/sprite.svg#map-marker"></use>
+                    </svg>
+                    <p class="form-info__block-text"> 91 Nolan Extensions Suite 670</p>
+                </div>
+                <div class="form-info__block">
+                    <svg class="form-info__block-svg">
+                        <use xlink:href="./img/sprite.svg#phone"></use>
+                    </svg>
+                    <p class="form-info__block-text">+001 356-868-2454</p>
+                </div>
+                <div class="form-info__block">
+                    <svg class="form-info__block-svg">
+                        <use xlink:href="./img/sprite.svg#inbox"></use>
+                    </svg>
+                    <p class="form-info__block-text">gahuy93@gmail.com</p>
+                </div>
+                <div class="form-info__block">
+                    <svg class="form-info__block-svg">
+                        <use xlink:href="./img/sprite.svg#clock"></use>
+                    </svg>
+                    <p class="form-info__block-text">From 07:05AM to 19:30PM</p>
+                </div>
+            </div>
+            <div class="contact-form__submit">
+                <input type="text"  name="name" placeholder="Name" class="contact-form__submit-input" required>
+                <input type="email" name="email" placeholder="Email" class="contact-form__submit-input" required>
+                <div class="right-button">
+                    <button class="contact-form__submit-button" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer-header">
+        <svg class="footer-header__nav-logo">
+            <use xlink:href="./img/sprite.svg#logo"></use>
+        </svg>
+        <div class="footer-header__nav-social nav-social">
+            <a href="https://uk-ua.facebook.com/" target="_blank" class="nav-social__link">
+                <svg class="nav-social__svg">
+                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                </svg>
+            </a>
+            <a href="https://twitter.com/?lang=uk" target="_blank" class="nav-social__link">
+                <svg class="nav-social__svg">
+                    <use xlink:href="./img/sprite.svg#twitter"></use>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="nav-social__link">
+                <svg class="nav-social__svg">
+                    <use xlink:href="./img/sprite.svg#instagram "></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="footer__text">
+        <p class="footer__text-left">Copyrights © 2017 Monticello </p>
+        <p class="footer__text-right">Made with &hearts; by Ga Huy</p>
+    </div>
+
+</footer>
+
 <script src="./js/jQuery.js"></script>
 <script src="./js/slick.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/map.js"></script>
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKHnfB2_V4mBbsjNe9Zm04KFmHjgh7s4Q&callback=initMap"></script>-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKHnfB2_V4mBbsjNe9Zm04KFmHjgh7s4Q&callback=initMap"></script>
 </body>
 </html>

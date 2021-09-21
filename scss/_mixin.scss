@@ -18,6 +18,31 @@
   background-color: #2c4058;
   margin: 0 auto 30px;
 }
+@mixin button() {
+  margin-bottom: 30px;
+  width: 200px;
+  height: 50px;
+  outline: none;
+  background-color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #5757cc;
+  }
+}
+
+@mixin afterCircle() {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -18px;
+  bottom: -10px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
 
 @mixin img-position($right, $bcg-color) {
   position: relative;
@@ -35,11 +60,19 @@
 }
 
 @mixin h2Titles () {
-  margin-bottom: 140px;
+  margin-bottom: 120px;
   text-align: center;
   text-transform: uppercase;
   @include font-settings("Gotham-Bold", 44px, #2c4058);
-
+  @media screen and (max-width: 1200px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 992px){
+    margin-bottom: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 25px;
+  }
   &:before {
     @include before-line()
   }
