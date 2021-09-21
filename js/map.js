@@ -170,7 +170,7 @@ function initMap() {
     const home = new google.maps.Marker({
         position: { lat: 50.5581295813674, lng: 30.822439431557324 },
         map,
-        icon: "../img/marker.png",
+        icon: "./img/marker.png",
     });
     map.setTilt(35);
 }
