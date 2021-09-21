@@ -368,7 +368,7 @@ body {
 }
 
 .news {
-  background: url("/img/news_background.png") center no-repeat;
+  background: url("../img/news_background.png") center no-repeat;
   background-size: cover;
   opacity: 0;
 
@@ -653,7 +653,7 @@ body {
 .footer {
   padding: 25vh calc(50vw - 400px);
   position: relative;
-  background: url("/img/footer_background.png") center no-repeat;
+  background: url("../img/footer_background.png") center no-repeat;
   background-size: cover;
   @media screen and (max-width: 992px) {
     padding: 15vh calc(50vw - 400px);
@@ -663,7 +663,7 @@ body {
   }
 
   &__contact {
-    background: url("/img/form_beackground.png") #fff center no-repeat;
+    background: url("../img/form_beackground.png") #fff center no-repeat;
     background-size: cover;
     min-width: 780px;
     position: absolute;
